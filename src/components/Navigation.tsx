@@ -62,7 +62,7 @@ const Navigation = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
-                className="text-gray-700 dark:text-gray-300 hover:text-portfolio-primary transition-colors font-medium"
+                className="text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium drop-shadow-sm"
               >
                 {item.name}
               </motion.button>
@@ -75,7 +75,7 @@ const Navigation = () => {
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 dark:text-gray-300 hover:text-portfolio-primary transition-colors"
+              className="text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors drop-shadow-sm"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -90,12 +90,12 @@ const Navigation = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden mt-4 pb-4"
           >
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-lg p-4">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className="text-left text-gray-700 dark:text-gray-300 hover:text-portfolio-primary transition-colors font-medium"
+                  className="text-left text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
                 >
                   {item.name}
                 </button>
