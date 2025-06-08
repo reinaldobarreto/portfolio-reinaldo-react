@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Scene3D from '../components/Scene3D';
@@ -7,6 +6,7 @@ import ExperienceTimeline from '../components/ExperienceTimeline';
 import ProjectCard from '../components/ProjectCard';
 import ContactSection from '../components/ContactSection';
 import Navigation from '../components/Navigation';
+import { Avatar, AvatarImage, AvatarFallback } from '../components/ui/avatar';
 import { 
   Github, 
   Linkedin, 
@@ -114,11 +114,11 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-blue-900">
       <Navigation />
       
       {/* Hero Section */}
-      <section ref={heroRef} className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section id="home" ref={heroRef} className="min-h-screen flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Scene3D />
         </div>
@@ -129,6 +129,22 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
+            {/* Profile Picture */}
+            <motion.div
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={heroInView ? { scale: 1, opacity: 1 } : {}}
+              transition={{ duration: 1, delay: 0.1 }}
+              className="flex justify-center mb-8"
+            >
+              <Avatar className="w-32 h-32 border-4 border-white dark:border-gray-700 shadow-xl">
+                <AvatarImage 
+                  src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=400&fit=crop&crop=face" 
+                  alt="Reinaldo Barreto" 
+                />
+                <AvatarFallback className="text-2xl font-bold bg-portfolio-primary text-white">RB</AvatarFallback>
+              </Avatar>
+            </motion.div>
+
             <motion.h1 
               className="text-6xl md:text-8xl font-bold mb-6 portfolio-text-gradient"
               initial={{ scale: 0.5 }}
@@ -138,36 +154,40 @@ const Index = () => {
               Reinaldo Barreto
             </motion.h1>
             <motion.p 
-              className="text-xl md:text-2xl text-gray-600 mb-8"
+              className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8"
               initial={{ opacity: 0 }}
               animate={heroInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               Desenvolvedor Full Stack | Especialista em JavaScript & Java
             </motion.p>
+            
+            {/* Social Links */}
             <motion.div 
               className="flex justify-center space-x-6 mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <a href="https://github.com/reinaldobarreto" className="text-gray-600 hover:text-portfolio-primary transition-colors">
+              <a href="https://github.com/reinaldobarreto" className="text-gray-600 dark:text-gray-400 hover:text-portfolio-primary transition-colors">
                 <Github size={32} />
               </a>
-              <a href="https://www.linkedin.com/in/reinaldo-barreto-840896253" className="text-gray-600 hover:text-portfolio-primary transition-colors">
+              <a href="https://www.linkedin.com/in/reinaldo-barreto-840896253" className="text-gray-600 dark:text-gray-400 hover:text-portfolio-primary transition-colors">
                 <Linkedin size={32} />
               </a>
-              <a href="mailto:reinaldo3178@gmail.com" className="text-gray-600 hover:text-portfolio-primary transition-colors">
+              <a href="mailto:reinaldo3178@gmail.com" className="text-gray-600 dark:text-gray-400 hover:text-portfolio-primary transition-colors">
                 <Mail size={32} />
               </a>
             </motion.div>
+            
+            {/* Contact Info */}
             <motion.div 
               className="glass-effect rounded-2xl p-6 max-w-md mx-auto"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={heroInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <div className="flex items-center justify-center space-x-4 text-sm text-gray-700">
+              <div className="flex items-center justify-center space-x-4 text-sm text-gray-700 dark:text-gray-300">
                 <div className="flex items-center">
                   <MapPin size={16} className="mr-1" />
                   Navegantes, SC
@@ -183,7 +203,7 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section ref={skillsRef} className="py-20 bg-white">
+      <section id="skills" ref={skillsRef} className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -215,7 +235,7 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section ref={experienceRef} className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section id="experience" ref={experienceRef} className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-purple-900">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -236,7 +256,7 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 bg-white">
+      <section id="projects" className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -270,7 +290,9 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <ContactSection />
+      <div id="contact">
+        <ContactSection />
+      </div>
     </div>
   );
 };

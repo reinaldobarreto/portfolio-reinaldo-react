@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,6 +26,14 @@ const Navigation = () => {
     { name: 'Contato', href: '#contact' },
   ];
 
+  const handleNavClick = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false);
+  };
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -45,26 +54,28 @@ const Navigation = () => {
           </motion.div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
-              <motion.a
+              <motion.button
                 key={item.name}
-                href={item.href}
+                onClick={() => handleNavClick(item.href)}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
-                className="text-gray-700 hover:text-portfolio-primary transition-colors font-medium"
+                className="text-gray-700 dark:text-gray-300 hover:text-portfolio-primary transition-colors font-medium"
               >
                 {item.name}
-              </motion.a>
+              </motion.button>
             ))}
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-portfolio-primary transition-colors"
+              className="text-gray-700 dark:text-gray-300 hover:text-portfolio-primary transition-colors"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -81,14 +92,13 @@ const Navigation = () => {
           >
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <a
+                <button
                   key={item.name}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-gray-700 hover:text-portfolio-primary transition-colors font-medium"
+                  onClick={() => handleNavClick(item.href)}
+                  className="text-left text-gray-700 dark:text-gray-300 hover:text-portfolio-primary transition-colors font-medium"
                 >
                   {item.name}
-                </a>
+                </button>
               ))}
             </div>
           </motion.div>
