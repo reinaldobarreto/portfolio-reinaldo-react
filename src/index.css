@@ -37,45 +37,54 @@
 
     --radius: 0.5rem;
 
-    /* Custom portfolio colors */
-    --portfolio-primary: 240 100% 50%;
-    --portfolio-secondary: 300 100% 50%;
-    --portfolio-accent: 180 100% 50%;
+    /* Light theme portfolio colors */
+    --portfolio-primary: 326 100% 74%;
+    --portfolio-secondary: 189 97% 77%;
+    --portfolio-accent: 65 92% 76%;
+    --portfolio-purple: 255 92% 76%;
+    --portfolio-green: 135 94% 65%;
+    --portfolio-orange: 31 100% 71%;
+    --portfolio-red: 0 100% 67%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Official Dracula Theme Colors */
+    --background: 231 15% 18%; /* #282a36 */
+    --foreground: 60 30% 96%; /* #f8f8f2 */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 232 14% 31%; /* #44475a */
+    --card-foreground: 60 30% 96%; /* #f8f8f2 */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 231 15% 18%; /* #282a36 */
+    --popover-foreground: 60 30% 96%; /* #f8f8f2 */
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 326 100% 74%; /* #ff79c6 */
+    --primary-foreground: 231 15% 18%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 232 14% 31%; /* #44475a */
+    --secondary-foreground: 60 30% 96%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 230 14% 25%; /* #383a47 */
+    --muted-foreground: 225 9% 51%; /* #6272a4 */
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 65 92% 76%; /* #f1fa8c */
+    --accent-foreground: 231 15% 18%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 100% 67%; /* #ff5555 */
+    --destructive-foreground: 60 30% 96%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 232 14% 31%; /* #44475a */
+    --input: 232 14% 31%;
+    --ring: 326 100% 74%;
 
-    /* Portfolio colors for dark mode */
-    --portfolio-primary: 240 100% 60%;
-    --portfolio-secondary: 300 100% 60%;
-    --portfolio-accent: 180 100% 60%;
+    /* Dracula Portfolio colors */
+    --portfolio-primary: 326 100% 74%; /* #ff79c6 Pink */
+    --portfolio-secondary: 189 97% 77%; /* #8be9fd Cyan */
+    --portfolio-accent: 65 92% 76%; /* #f1fa8c Yellow */
+    --portfolio-purple: 255 92% 76%; /* #bd93f9 Purple */
+    --portfolio-green: 135 94% 65%; /* #50fa7b Green */
+    --portfolio-orange: 31 100% 71%; /* #ffb86c Orange */
+    --portfolio-red: 0 100% 67%; /* #ff5555 Red */
   }
 }
 
@@ -112,12 +121,18 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Enhanced Skill Cards with proper 3D flip */
 .skill-card {
   perspective: 1000px;
+  height: 280px;
 }
 
 .skill-card-inner {
-  transition: transform 0.6s;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s ease-in-out;
   transform-style: preserve-3d;
 }
 
@@ -127,11 +142,79 @@
 
 .skill-card-front,
 .skill-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .skill-card-back {
   transform: rotateY(180deg);
+}
+
+/* Dracula themed skill cards */
+.skill-card-front {
+  background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--muted)));
+  border: 2px solid hsl(var(--portfolio-primary) / 0.2);
+}
+
+.skill-card-back {
+  background: linear-gradient(135deg, hsl(var(--portfolio-primary)), hsl(var(--portfolio-secondary)));
+}
+
+.dark .skill-card-front {
+  background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--muted)));
+  border: 2px solid hsl(var(--portfolio-primary) / 0.3);
+}
+
+/* Enhanced hover effects */
+.skill-card:hover .skill-card-front {
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Glitch effect for icons */
+@keyframes glitch {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-1px); }
+  80% { transform: translateX(1px); }
+}
+
+.icon-glitch:hover {
+  animation: glitch 0.5s ease-in-out;
+}
+
+/* Neon glow effects */
+.neon-glow {
+  animation: neon 2s ease-in-out infinite alternate;
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 
+      0 0 5px hsl(var(--portfolio-primary)),
+      0 0 10px hsl(var(--portfolio-primary)),
+      0 0 15px hsl(var(--portfolio-primary)),
+      0 0 20px hsl(var(--portfolio-primary));
+  }
+  to {
+    text-shadow: 
+      0 0 2px hsl(var(--portfolio-primary)),
+      0 0 5px hsl(var(--portfolio-primary)),
+      0 0 8px hsl(var(--portfolio-primary)),
+      0 0 12px hsl(var(--portfolio-primary));
+  }
 }
 
 /* Smooth scrolling */
@@ -139,21 +222,28 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom animations */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+/* Enhanced animations and effects */
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
 }
 
-.float-animation {
-  animation: float 6s ease-in-out infinite;
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-@keyframes glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
+/* Enhanced glass effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.glow-animation {
-  animation: glow 2s ease-in-out infinite;
+.dark .glass-effect {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }

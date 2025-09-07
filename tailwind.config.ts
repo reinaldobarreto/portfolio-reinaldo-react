@@ -56,6 +56,10 @@ export default {
 				'portfolio-primary': 'hsl(var(--portfolio-primary))',
 				'portfolio-secondary': 'hsl(var(--portfolio-secondary))',
 				'portfolio-accent': 'hsl(var(--portfolio-accent))',
+				'portfolio-purple': 'hsl(var(--portfolio-purple))',
+				'portfolio-green': 'hsl(var(--portfolio-green))',
+				'portfolio-orange': 'hsl(var(--portfolio-orange))',
+				'portfolio-red': 'hsl(var(--portfolio-red))',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
