@@ -124,7 +124,7 @@
 /* Enhanced Skill Cards with proper 3D flip */
 .skill-card {
   perspective: 1000px;
-  height: 280px;
+  height: 300px;
 }
 
 .skill-card-inner {
@@ -220,6 +220,14 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Text utilities */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* Enhanced animations and effects */

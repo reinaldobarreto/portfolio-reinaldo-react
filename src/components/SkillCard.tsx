@@ -43,21 +43,26 @@ const SkillCard = ({ skill }: SkillCardProps) => {
 
         {/* Back */}
         <div className="skill-card-back text-white">
-          <h3 className="text-xl font-bold mb-4">
+          <h3 className="text-xl font-bold mb-3">
             {skill.category}
           </h3>
-          <p className="text-sm mb-4 opacity-90 leading-relaxed">
+          <p className="text-xs mb-4 opacity-90 leading-relaxed line-clamp-3">
             {skill.description}
           </p>
-          <div className="space-y-2 max-h-32 overflow-y-auto">
-            {skill.technologies.map((tech) => (
-              <div
+          <div className="flex flex-wrap gap-1.5 justify-center">
+            {skill.technologies.slice(0, 6).map((tech) => (
+              <span
                 key={tech}
-                className="px-3 py-1 bg-white/20 rounded-full text-sm backdrop-blur-sm border border-white/10"
+                className="px-2 py-1 bg-white/20 rounded-full text-xs backdrop-blur-sm border border-white/10 text-center"
               >
                 {tech}
-              </div>
+              </span>
             ))}
+            {skill.technologies.length > 6 && (
+              <span className="px-2 py-1 bg-white/30 rounded-full text-xs font-semibold">
+                +{skill.technologies.length - 6} more
+              </span>
+            )}
           </div>
         </div>
       </div>
