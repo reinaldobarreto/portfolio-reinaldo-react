@@ -7,7 +7,9 @@ import ProjectCard from '../components/ProjectCard';
 import ContactSection from '../components/ContactSection';
 import Navigation from '../components/Navigation';
 import { Avatar, AvatarImage, AvatarFallback } from '../components/ui/avatar';
-import { 
+import { generateCV } from '../utils/cvGenerator';
+import profilePhoto from '../assets/profile-photo.jpg';
+import {
   Github, 
   Linkedin, 
   Mail, 
@@ -203,7 +205,7 @@ const Index = () => {
                   <div className="bg-background rounded-full p-2">
                     <Avatar className="w-32 h-32 border-4 border-card shadow-2xl">
                       <AvatarImage 
-                        src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=400&fit=crop&crop=face" 
+                        src={profilePhoto} 
                         alt="Reinaldo Barreto" 
                       />
                       <AvatarFallback className="text-2xl font-bold bg-gradient-to-r from-portfolio-primary to-portfolio-secondary text-white">RB</AvatarFallback>
@@ -256,11 +258,17 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.9 }}
               className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
             >
-              <button className="px-8 py-4 bg-gradient-to-r from-portfolio-primary to-portfolio-secondary text-white font-semibold rounded-full hover:scale-105 transition-all duration-300 flex items-center justify-center group shadow-lg">
+              <button 
+                onClick={generateCV}
+                className="px-8 py-4 bg-gradient-to-r from-portfolio-primary to-portfolio-secondary text-white font-semibold rounded-full hover:scale-105 transition-all duration-300 flex items-center justify-center group shadow-lg"
+              >
                 <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
                 Download CV
               </button>
-              <button className="px-8 py-4 border-2 border-portfolio-primary text-portfolio-primary font-semibold rounded-full hover:bg-portfolio-primary hover:text-white transition-all duration-300 flex items-center justify-center group">
+              <button 
+                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-8 py-4 border-2 border-portfolio-primary text-portfolio-primary font-semibold rounded-full hover:bg-portfolio-primary hover:text-white transition-all duration-300 flex items-center justify-center group"
+              >
                 <Briefcase className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
                 Ver Projetos
               </button>
