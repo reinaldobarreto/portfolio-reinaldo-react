@@ -4,7 +4,7 @@ import { Moon, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const ThemeToggle = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');

@@ -7,8 +7,8 @@ import ProjectCard from '../components/ProjectCard';
 import ContactSection from '../components/ContactSection';
 import Navigation from '../components/Navigation';
 import { Avatar, AvatarImage, AvatarFallback } from '../components/ui/avatar';
-import { generateCV } from '../utils/cvGenerator';
-import profilePhoto from '../assets/profile-photo.jpg';
+import profilePhoto from '../assets/reinaldo-photo.jpg';
+import curriculumImage from '../assets/curriculo-reinaldo.png';
 import {
   Github, 
   Linkedin, 
@@ -42,6 +42,16 @@ const Index = () => {
   const [heroRef, heroInView] = useInView({ threshold: 0.3, triggerOnce: true });
   const [skillsRef, skillsInView] = useInView({ threshold: 0.2, triggerOnce: true });
   const [experienceRef, experienceInView] = useInView({ threshold: 0.2, triggerOnce: true });
+
+  // Função para download do currículo como imagem
+  const downloadCV = () => {
+    const link = document.createElement('a');
+    link.href = curriculumImage;
+    link.download = 'Curriculo_Reinaldo_Barreto.png';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const skills = [
     {
@@ -259,7 +269,7 @@ const Index = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
             >
               <button 
-                onClick={generateCV}
+                onClick={downloadCV}
                 className="px-8 py-4 bg-gradient-to-r from-portfolio-primary to-portfolio-secondary text-white font-semibold rounded-full hover:scale-105 transition-all duration-300 flex items-center justify-center group shadow-lg"
               >
                 <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
