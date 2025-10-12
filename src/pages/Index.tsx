@@ -9,7 +9,6 @@ import Navigation from '../components/Navigation';
 import { Avatar, AvatarImage, AvatarFallback } from '../components/ui/avatar';
 import profilePhoto from '../assets/foto-perfil.png';
 import rbtechLogo from '../assets/rbtech-logo.png';
-import curriculumImage from '../assets/curriculo-reinaldo.png';
 import {
   Github, 
   Linkedin, 
@@ -30,7 +29,6 @@ import {
   Rocket,
   Star,
   Download,
-  ExternalLink,
   ArrowDown,
   Coffee,
   Heart,
@@ -44,11 +42,11 @@ const Index = () => {
   const [skillsRef, skillsInView] = useInView({ threshold: 0.2, triggerOnce: true });
   const [experienceRef, experienceInView] = useInView({ threshold: 0.2, triggerOnce: true });
 
-  // Função para download do currículo como imagem
+  // Função para download do currículo em PDF
   const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = curriculumImage;
-    link.download = 'Curriculo_Reinaldo_Barreto.png';
+    link.href = '/curriculo-reinaldo-barreto.pdf';
+    link.download = 'Curriculo_Reinaldo_Barreto_Flutter_Developer.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -494,21 +492,6 @@ const Index = () => {
               </motion.div>
             ))}
           </div>
-          
-          {/* More Projects Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <button className="px-8 py-4 bg-gradient-to-r from-portfolio-purple to-portfolio-primary text-white font-semibold rounded-full hover:scale-105 transition-all duration-300 flex items-center justify-center mx-auto group shadow-lg">
-              <ExternalLink className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
-              Ver Todos os Projetos
-              <ArrowDown className="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform" />
-            </button>
-          </motion.div>
         </div>
       </section>
 
