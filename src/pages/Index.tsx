@@ -45,7 +45,8 @@ const Index = () => {
   // Função para download do currículo em PDF
   const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/curriculo-reinaldo-barreto.pdf';
+    const cvUrl = new URL('curriculo-reinaldo-barreto.pdf', import.meta.env.BASE_URL).toString();
+    link.href = cvUrl;
     link.download = 'Curriculo_Reinaldo_Barreto_Flutter_Developer.pdf';
     document.body.appendChild(link);
     link.click();
