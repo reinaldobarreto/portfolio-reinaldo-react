@@ -5,6 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // Base para GitHub Pages: https://<usuario>.github.io/portfolio-reinaldo-react/
+  // Em desenvolvimento, mantém raiz "/" para evitar caminhos quebrados
+  base: mode === 'development' ? '/' : '/portfolio-reinaldo-react/',
   server: {
     host: "::",
     port: 8080,
