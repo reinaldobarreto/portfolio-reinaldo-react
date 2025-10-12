@@ -48,43 +48,43 @@
   }
 
   .dark {
-    /* Official Dracula Theme Colors */
-    --background: 231 15% 18%; /* #282a36 */
-    --foreground: 60 30% 96%; /* #f8f8f2 */
+    /* Flutter-inspired Theme Colors */
+    --background: 220 18% 12%; /* #1a1f2e Dark blue-gray */
+    --foreground: 0 0% 98%; /* #fafafa Almost white */
 
-    --card: 232 14% 31%; /* #44475a */
-    --card-foreground: 60 30% 96%; /* #f8f8f2 */
+    --card: 220 16% 18%; /* #252d3d Slightly lighter */
+    --card-foreground: 0 0% 98%;
 
-    --popover: 231 15% 18%; /* #282a36 */
-    --popover-foreground: 60 30% 96%; /* #f8f8f2 */
+    --popover: 220 18% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 326 100% 74%; /* #ff79c6 */
-    --primary-foreground: 231 15% 18%;
+    --primary: 31 100% 60%; /* #ff9933 Amber/Orange */
+    --primary-foreground: 220 18% 12%;
 
-    --secondary: 232 14% 31%; /* #44475a */
-    --secondary-foreground: 60 30% 96%;
+    --secondary: 189 95% 55%; /* #13B9FD Flutter Cyan/Turquesa */
+    --secondary-foreground: 220 18% 12%;
 
-    --muted: 230 14% 25%; /* #383a47 */
-    --muted-foreground: 225 9% 51%; /* #6272a4 */
+    --muted: 220 15% 22%; /* #2f3849 */
+    --muted-foreground: 220 10% 65%; /* #9ca3af */
 
-    --accent: 65 92% 76%; /* #f1fa8c */
-    --accent-foreground: 231 15% 18%;
+    --accent: 200 98% 45%; /* #0175C2 Flutter Blue */
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 100% 67%; /* #ff5555 */
-    --destructive-foreground: 60 30% 96%;
+    --destructive: 0 90% 60%; /* #f44336 */
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 232 14% 31%; /* #44475a */
-    --input: 232 14% 31%;
-    --ring: 326 100% 74%;
+    --border: 220 16% 25%; /* #343d4f */
+    --input: 220 16% 25%;
+    --ring: 31 100% 60%;
 
-    /* Dracula Portfolio colors */
-    --portfolio-primary: 326 100% 74%; /* #ff79c6 Pink */
-    --portfolio-secondary: 189 97% 77%; /* #8be9fd Cyan */
-    --portfolio-accent: 65 92% 76%; /* #f1fa8c Yellow */
-    --portfolio-purple: 255 92% 76%; /* #bd93f9 Purple */
-    --portfolio-green: 135 94% 65%; /* #50fa7b Green */
-    --portfolio-orange: 31 100% 71%; /* #ffb86c Orange */
-    --portfolio-red: 0 100% 67%; /* #ff5555 Red */
+    /* Flutter Mobile Developer Portfolio colors */
+    --portfolio-primary: 31 100% 60%; /* #ff9933 Amber - Primary highlight */
+    --portfolio-secondary: 189 95% 55%; /* #13B9FD Turquesa/Cyan - Flutter accent */
+    --portfolio-accent: 200 98% 45%; /* #0175C2 Flutter Blue */
+    --portfolio-purple: 262 52% 60%; /* Flutter purple accent */
+    --portfolio-green: 142 76% 45%; /* Success/Android green */
+    --portfolio-orange: 25 95% 65%; /* Warm orange */
+    --portfolio-red: 4 90% 58%; /* Error red */
   }
 }
 
@@ -195,25 +195,35 @@
   animation: glitch 0.5s ease-in-out;
 }
 
-/* Neon glow effects */
+/* Neon glow effects - Flutter-inspired */
 .neon-glow {
-  animation: neon 2s ease-in-out infinite alternate;
+  animation: neon 2.5s ease-in-out infinite alternate;
 }
 
 @keyframes neon {
   from {
     text-shadow: 
-      0 0 5px hsl(var(--portfolio-primary)),
-      0 0 10px hsl(var(--portfolio-primary)),
+      0 0 8px hsl(var(--portfolio-primary)),
       0 0 15px hsl(var(--portfolio-primary)),
-      0 0 20px hsl(var(--portfolio-primary));
+      0 0 25px hsl(var(--portfolio-secondary)),
+      0 0 35px hsl(var(--portfolio-secondary));
   }
   to {
     text-shadow: 
-      0 0 2px hsl(var(--portfolio-primary)),
-      0 0 5px hsl(var(--portfolio-primary)),
+      0 0 4px hsl(var(--portfolio-primary)),
       0 0 8px hsl(var(--portfolio-primary)),
-      0 0 12px hsl(var(--portfolio-primary));
+      0 0 15px hsl(var(--portfolio-secondary)),
+      0 0 20px hsl(var(--portfolio-secondary));
+  }
+}
+
+/* Mobile-focused bounce animation */
+@keyframes mobile-bounce {
+  0%, 100% { 
+    transform: translateY(0) scale(1);
+  }
+  50% { 
+    transform: translateY(-10px) scale(1.05);
   }
 }
 

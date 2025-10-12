@@ -55,6 +55,12 @@ const Index = () => {
 
   const skills = [
     {
+      category: 'Flutter Mobile Development',
+      icon: <Smartphone className="w-8 h-8" />,
+      technologies: ['Flutter', 'Dart', 'Android (Kotlin/Java)', 'iOS (Swift)', 'Firebase', 'State Management', 'Responsive UI', 'Animations'],
+      description: 'Especialista em Flutter e Dart para desenvolvimento de apps mobile multiplataforma nativos para Android e iOS, com conhecimento básico em Kotlin, Java e Swift'
+    },
+    {
       category: 'Frontend Development',
       icon: <Code className="w-8 h-8" />,
       technologies: ['Angular', 'React.js', 'Vue.js', 'Next.js', 'TypeScript', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Sass'],
@@ -69,38 +75,32 @@ const Index = () => {
     {
       category: 'Database Management',
       icon: <Database className="w-8 h-8" />,
-      technologies: ['PostgreSQL', 'MySQL', 'Oracle', 'MongoDB', 'Redis', 'Elasticsearch'],
+      technologies: ['PostgreSQL', 'MySQL', 'Oracle', 'MongoDB', 'Redis', 'Elasticsearch', 'SQLite'],
       description: 'Modelagem, otimização e administração de bancos de dados relacionais e NoSQL para máxima eficiência'
     },
     {
       category: 'DevOps & Cloud',
       icon: <CloudLightning className="w-8 h-8" />,
-      technologies: ['Docker', 'Kubernetes', 'AWS', 'CI/CD', 'Jenkins', 'Terraform', 'Nginx'],
+      technologies: ['Docker', 'Kubernetes', 'AWS', 'CI/CD', 'Jenkins', 'Terraform', 'Nginx', 'Google Cloud'],
       description: 'Automação completa de deploy, infraestrutura como código e orquestração de containers'
     },
     {
-      category: 'Mobile Development',
-      icon: <Smartphone className="w-8 h-8" />,
-      technologies: ['React Native', 'Flutter', 'Progressive Web Apps', 'Ionic', 'Cordova'],
-      description: 'Desenvolvimento de aplicações mobile nativas e híbridas para iOS e Android com performance otimizada'
+      category: 'Mobile Technologies',
+      icon: <Globe className="w-8 h-8" />,
+      technologies: ['React Native', 'Progressive Web Apps', 'Ionic', 'Native Android', 'Native iOS', 'Cross-platform'],
+      description: 'Experiência em múltiplas tecnologias mobile e desenvolvimento de aplicações híbridas e nativas'
     },
     {
       category: 'Security & Authentication',
       icon: <Shield className="w-8 h-8" />,
-      technologies: ['OAuth2', 'JWT', 'Spring Security', 'HTTPS', 'Encryption', 'Firewall', 'Penetration Testing'],
+      technologies: ['OAuth2', 'JWT', 'Spring Security', 'HTTPS', 'Encryption', 'Firewall', 'Biometrics'],
       description: 'Implementação de segurança multicamadas e autenticação robusta para proteção total de dados'
-    },
-    {
-      category: 'AI & Machine Learning',
-      icon: <Brain className="w-8 h-8" />,
-      technologies: ['TensorFlow', 'Python ML', 'Natural Language Processing', 'Computer Vision', 'Data Analytics'],
-      description: 'Integração de inteligência artificial e machine learning para soluções inovadoras e preditivas'
     },
     {
       category: 'Performance & Optimization',
       icon: <Zap className="w-8 h-8" />,
       technologies: ['Performance Monitoring', 'Code Optimization', 'Caching', 'CDN', 'Load Balancing'],
-      description: 'Otimização avançada de performance e escalabilidade para aplicações de alto tráfego'
+      description: 'Otimização avançada de performance e escalabilidade para aplicações mobile e web de alto tráfego'
     }
   ];
 
@@ -130,6 +130,14 @@ const Index = () => {
 
   const projects = [
     {
+      title: 'App Flutter Multiplataforma',
+      description: 'Aplicativo mobile completo desenvolvido em Flutter/Dart para Android e iOS com versão web responsiva, incluindo autenticação, notificações push e sincronização em tempo real.',
+      technologies: ['Flutter', 'Dart', 'Firebase', 'Android', 'iOS', 'Web', 'State Management', 'Push Notifications'],
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=300&fit=crop',
+      link: '#',
+      featured: true
+    },
+    {
       title: 'Sistema de Gestão Pública Integrada',
       description: 'Plataforma completa para gestão de recursos humanos, tributário e contábil para prefeituras com módulos integrados e dashboard analítico.',
       technologies: ['Vue.js', 'Spring Boot', 'PostgreSQL', 'Docker', 'JWT', 'Redis'],
@@ -138,10 +146,10 @@ const Index = () => {
       featured: true
     },
     {
-      title: 'API de Segurança Pública Avançada',
-      description: 'Sistema robusto de APIs para integração de dados de segurança pública com machine learning para análise preditiva.',
-      technologies: ['Node.js', 'Express', 'JWT', 'PostgreSQL', 'TensorFlow', 'Docker'],
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=300&fit=crop',
+      title: 'E-Commerce Mobile Flutter',
+      description: 'App de e-commerce nativo Flutter para Android e iOS com pagamentos integrados, carrinho de compras e sistema de notificações.',
+      technologies: ['Flutter', 'Dart', 'Kotlin', 'Swift', 'Firebase', 'Stripe', 'REST API'],
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop',
       link: '#',
       featured: true
     },
@@ -154,26 +162,18 @@ const Index = () => {
       featured: false
     },
     {
-      title: 'E-commerce Full Stack',
-      description: 'Plataforma completa de e-commerce com pagamentos integrados, gestão de estoque e análises avançadas.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'AWS', 'GraphQL'],
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop',
+      title: 'App de Fitness Mobile',
+      description: 'Aplicativo Flutter de fitness com rastreamento de treinos, gráficos de progresso e integração com wearables.',
+      technologies: ['Flutter', 'Dart', 'SQLite', 'Charts', 'Sensors', 'Health Kit', 'Google Fit'],
+      image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&h=300&fit=crop',
       link: '#',
       featured: false
     },
     {
-      title: 'App Mobile Corporativo',
-      description: 'Aplicativo mobile híbrido para gestão corporativa com sincronização offline e notificações push.',
-      technologies: ['React Native', 'Firebase', 'Redux', 'Push Notifications', 'Offline Storage'],
-      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=300&fit=crop',
-      link: '#',
-      featured: false
-    },
-    {
-      title: 'Dashboard Analytics BI',
-      description: 'Painel de business intelligence com visualizações interativas e relatórios automatizados em tempo real.',
-      technologies: ['Vue.js', 'D3.js', 'Python', 'Pandas', 'PostgreSQL', 'Chart.js'],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
+      title: 'API de Segurança Pública',
+      description: 'Sistema robusto de APIs para integração de dados de segurança pública com análise de dados em tempo real.',
+      technologies: ['Node.js', 'Express', 'JWT', 'PostgreSQL', 'Docker', 'WebSocket'],
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=300&fit=crop',
       link: '#',
       featured: false
     }
@@ -243,11 +243,11 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="flex items-center justify-center mb-4"
             >
-              <Terminal className="w-6 h-6 text-portfolio-primary mr-2" />
+              <Smartphone className="w-6 h-6 text-portfolio-secondary mr-2" />
               <span className="text-xl md:text-2xl text-foreground font-mono">
-                Full Stack Developer
+                Flutter Mobile Developer
               </span>
-              <Rocket className="w-6 h-6 text-portfolio-secondary ml-2 animate-bounce" />
+              <Rocket className="w-6 h-6 text-portfolio-primary ml-2 animate-bounce" />
             </motion.div>
             
             <motion.p 
@@ -256,9 +256,9 @@ const Index = () => {
               animate={heroInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.7 }}
             >
-              Especialista em <span className="text-portfolio-primary font-semibold">JavaScript</span> & 
-              <span className="text-portfolio-secondary font-semibold"> Java</span> com paixão por 
-              <span className="text-portfolio-accent font-semibold"> inovação tecnológica</span>
+              Especialista em <span className="text-portfolio-primary font-semibold">Flutter/Dart</span> para 
+              <span className="text-portfolio-secondary font-semibold"> Android & iOS</span> com experiência em 
+              <span className="text-portfolio-accent font-semibold"> Full Stack Development</span>
             </motion.p>
             
             {/* Action Buttons */}
