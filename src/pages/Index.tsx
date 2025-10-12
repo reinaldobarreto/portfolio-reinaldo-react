@@ -7,7 +7,8 @@ import ProjectCard from '../components/ProjectCard';
 import ContactSection from '../components/ContactSection';
 import Navigation from '../components/Navigation';
 import { Avatar, AvatarImage, AvatarFallback } from '../components/ui/avatar';
-import profilePhoto from '../assets/reinaldo-photo.jpg';
+import profilePhoto from '../assets/foto-perfil.png';
+import rbtechLogo from '../assets/rbtech-logo.png';
 import curriculumImage from '../assets/curriculo-reinaldo.png';
 import {
   Github, 
@@ -139,7 +140,7 @@ const Index = () => {
     },
     {
       title: 'Sistema de Gestão Pública Integrada',
-      description: 'Plataforma completa para gestão de recursos humanos, tributário e contábil para prefeituras com módulos integrados e dashboard analítico.',
+      description: 'Plataforma completa para gestão de recursos humanos, tributário e contábil para prefeituras com módulos integrados e dashboard analítico. (Em desenvolvimento)',
       technologies: ['Vue.js', 'Spring Boot', 'PostgreSQL', 'Docker', 'JWT', 'Redis'],
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop',
       link: '#',
@@ -147,7 +148,7 @@ const Index = () => {
     },
     {
       title: 'E-Commerce Mobile Flutter',
-      description: 'App de e-commerce nativo Flutter para Android e iOS com pagamentos integrados, carrinho de compras e sistema de notificações.',
+      description: 'App de e-commerce nativo Flutter para Android e iOS com pagamentos integrados, carrinho de compras e sistema de notificações. (Em desenvolvimento)',
       technologies: ['Flutter', 'Dart', 'Kotlin', 'Swift', 'Firebase', 'Stripe', 'REST API'],
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop',
       link: '#',
@@ -155,7 +156,7 @@ const Index = () => {
     },
     {
       title: 'Portal Administrativo Responsivo',
-      description: 'Interface moderna e intuitiva para gestão de sistemas administrativos municipais com dashboard em tempo real.',
+      description: 'Interface moderna e intuitiva para gestão de sistemas administrativos municipais com dashboard em tempo real. (Em desenvolvimento)',
       technologies: ['Angular', 'TypeScript', 'Material UI', 'Spring Boot', 'WebSocket', 'PWA'],
       image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&h=300&fit=crop',
       link: '#',
@@ -163,7 +164,7 @@ const Index = () => {
     },
     {
       title: 'App de Fitness Mobile',
-      description: 'Aplicativo Flutter de fitness com rastreamento de treinos, gráficos de progresso e integração com wearables.',
+      description: 'Aplicativo Flutter de fitness com rastreamento de treinos, gráficos de progresso e integração com wearables. (Em desenvolvimento)',
       technologies: ['Flutter', 'Dart', 'SQLite', 'Charts', 'Sensors', 'Health Kit', 'Google Fit'],
       image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&h=300&fit=crop',
       link: '#',
@@ -171,7 +172,7 @@ const Index = () => {
     },
     {
       title: 'API de Segurança Pública',
-      description: 'Sistema robusto de APIs para integração de dados de segurança pública com análise de dados em tempo real.',
+      description: 'Sistema robusto de APIs para integração de dados de segurança pública com análise de dados em tempo real. (Em desenvolvimento)',
       technologies: ['Node.js', 'Express', 'JWT', 'PostgreSQL', 'Docker', 'WebSocket'],
       image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=300&fit=crop',
       link: '#',
