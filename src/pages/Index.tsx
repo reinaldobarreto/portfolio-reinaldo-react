@@ -42,15 +42,28 @@ const Index = () => {
   const [skillsRef, skillsInView] = useInView({ threshold: 0.2, triggerOnce: true });
   const [experienceRef, experienceInView] = useInView({ threshold: 0.2, triggerOnce: true });
 
-  // Função para download do currículo em PDF
-  const downloadCV = () => {
-    const link = document.createElement('a');
-    const cvUrl = new URL('curriculo-reinaldo-barreto.pdf', import.meta.env.BASE_URL).toString();
-    link.href = cvUrl;
-    link.download = 'Curriculo_Reinaldo_Barreto_Flutter_Developer.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  // Função para download do currículo em PDF (robusta com Blob)
+  const downloadCV = async () => {
+    try {
+      const cvUrl = `${import.meta.env.BASE_URL}curriculo-reinaldo-barreto.pdf`;
+      const res = await fetch(cvUrl);
+      if (!res.ok) throw new Error(`Falha ao obter PDF: ${res.status}`);
+      const blob = await res.blob();
+      const objectUrl = URL.createObjectURL(blob);
+
+      const link = document.createElement('a');
+      link.href = objectUrl;
+      link.download = 'Curriculo_Reinaldo_Barreto_Flutter_Developer.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(objectUrl);
+    } catch (error) {
+      console.error('Erro ao baixar o currículo:', error);
+      // Fallback: abrir em nova aba se o navegador impedir o download direto
+      const fallbackUrl = `${import.meta.env.BASE_URL}curriculo-reinaldo-barreto.pdf`;
+      window.open(fallbackUrl, '_blank');
+    }
   };
 
   const skills = [
