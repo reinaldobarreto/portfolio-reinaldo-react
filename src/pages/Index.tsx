@@ -130,11 +130,11 @@ const Index = () => {
 
   const projects = [
     {
-      title: 'App Flutter Multiplataforma',
-      description: 'Aplicativo mobile completo desenvolvido em Flutter/Dart para Android e iOS com versão web responsiva, incluindo autenticação, notificações push e sincronização em tempo real.',
-      technologies: ['Flutter', 'Dart', 'Firebase', 'Android', 'iOS', 'Web', 'State Management', 'Push Notifications'],
-      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=300&fit=crop',
-      link: '#',
+      title: 'FinTrack360 - Controle Financeiro',
+      description: 'Aplicativo Flutter para controle financeiro pessoal/familiar. Foco em mobile-first (Android/iOS) com teste rápido via web. Sistema completo de gestão de economia doméstica.',
+      technologies: ['Flutter', 'Dart', 'Mobile-First', 'Android', 'iOS', 'Web', 'Financial Management', 'Responsive Design'],
+      image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=500&h=300&fit=crop',
+      link: 'https://reinaldobarreto.github.io/fintrack360/',
       featured: true
     },
     {
