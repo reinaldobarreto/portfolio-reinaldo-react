@@ -1,5 +1,7 @@
 
-# Portfólio Reinaldo Barreto - Desenvolvedor Full Stack
+# Portfólio Reinaldo Barreto da Silva - Desenvolvedor Full Stack
+
+🌐 **Acesse o portfólio**: [https://reinaldobarreto.github.io/portfolio-reinaldo-react/](https://reinaldobarreto.github.io/portfolio-reinaldo-react/)
 
 Um portfólio moderno e interativo desenvolvido com React, TypeScript, Three.js e Framer Motion, apresentando efeitos 3D, animações suaves e design responsivo.
 
@@ -134,27 +136,15 @@ Modifique `src/components/Scene3D.tsx` para:
 - Ajustar velocidade das animações
 - Adicionar novos objetos 3D
 
-## 🚀 Deploy
+## 🚀 Deploy no GitHub Pages
 
-Para fazer deploy do projeto:
-
-```bash
-# Build para produção
-npm run build
-
-# Preview do build
-npm run preview
-```
-
-### Opções de Deploy:
-- **Vercel**: `npx vercel`
-- **Netlify**: Conecte o repositório GitHub
-- **GitHub Pages**: Use GitHub Actions
-- **Lovable**: Publique direto da interface
+1. **Commit e push** as alterações para o repositório
+2. **Vá para** Actions → Deploy to GitHub Pages → Run workflow
+3. **Acesse** o site em https://reinaldobarreto.github.io/portfolio-reinaldo-react/
 
 ## 📞 Contato
 
-**Reinaldo Barreto**
+**Reinaldo Barreto da Silva**
 - 📧 Email: reinaldo3178@gmail.com
 - 📱 WhatsApp: +55 (47) 98830-2308
 - 💼 LinkedIn: [linkedin.com/in/reinaldo-barreto-840896253](https://www.linkedin.com/in/reinaldo-barreto-840896253)

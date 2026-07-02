@@ -237,7 +237,7 @@ const Index = () => {
               animate={heroInView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.9, delay: 0.35 }}
             >
-              Reinaldo Barreto
+              Reinaldo Barreto da Silva
             </motion.h1>
 
             <motion.div
