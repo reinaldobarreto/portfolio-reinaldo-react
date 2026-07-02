@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import Scene3D from '../components/Scene3D';
+
 import SkillCard from '../components/SkillCard';
 import ExperienceTimeline from '../components/ExperienceTimeline';
 import ProjectCard from '../components/ProjectCard';
