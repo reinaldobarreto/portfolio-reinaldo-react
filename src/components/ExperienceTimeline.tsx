@@ -1,5 +1,5 @@
-
 import { motion } from 'framer-motion';
+import { Briefcase, Calendar } from 'lucide-react';
 
 interface Experience {
   company: string;
@@ -16,46 +16,44 @@ interface ExperienceTimelineProps {
 
 const ExperienceTimeline = ({ experiences, inView }: ExperienceTimelineProps) => {
   return (
-    <div className="relative">
-      {/* Timeline line */}
-      <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-portfolio-primary to-portfolio-secondary"></div>
-      
-      <div className="space-y-12">
+    <div className="relative max-w-4xl mx-auto">
+      <div className="absolute left-8 top-4 bottom-4 w-1 rounded-full neuo-inset-sm" aria-hidden />
+
+      <div className="space-y-10">
         {experiences.map((experience, index) => (
           <motion.div
             key={experience.company}
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: index * 0.2 }}
-            className="relative flex items-start ml-16"
+            transition={{ duration: 0.7, delay: index * 0.15 }}
+            className="relative flex items-start pl-24"
           >
             {/* Timeline dot */}
-            <div className="absolute -left-10 w-4 h-4 bg-portfolio-primary rounded-full border-4 border-white shadow-lg"></div>
-            
-            {/* Content card */}
-            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow duration-300 w-full">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                <h3 className="text-xl font-bold text-gray-800 mb-2 md:mb-0">
-                  {experience.role}
-                </h3>
-                <span className="text-portfolio-primary font-semibold">
-                  {experience.period}
+            <div className="absolute left-0 top-2 w-16 h-16 rounded-2xl neuo-flat flex items-center justify-center">
+              <div className="w-9 h-9 rounded-xl neuo-inset-sm flex items-center justify-center text-portfolio-primary">
+                <Briefcase size={16} />
+              </div>
+            </div>
+
+            {/* Card */}
+            <div className="neuo-flat rounded-3xl p-6 w-full">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3 gap-2">
+                <h3 className="text-lg font-bold text-foreground">{experience.role}</h3>
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold text-portfolio-secondary neuo-inset-sm w-fit">
+                  <Calendar size={12} /> {experience.period}
                 </span>
               </div>
-              
-              <h4 className="text-lg font-semibold text-gray-700 mb-3">
+              <h4 className="text-sm font-semibold text-portfolio-primary mb-3 uppercase tracking-wider">
                 {experience.company}
               </h4>
-              
-              <p className="text-gray-600 mb-4 leading-relaxed">
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                 {experience.description}
               </p>
-              
               <div className="flex flex-wrap gap-2">
                 {experience.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 bg-portfolio-primary/10 text-portfolio-primary rounded-full text-sm font-medium"
+                    className="px-3 py-1 rounded-full text-xs font-medium text-foreground neuo-inset-sm"
                   >
                     {tech}
                   </span>
