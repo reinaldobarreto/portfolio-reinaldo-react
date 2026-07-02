@@ -193,175 +193,155 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-muted/50 to-background">
+    <div className="min-h-screen" style={{ background: 'var(--neuo-bg)' }}>
       <Navigation />
-      
+
       {/* Hero Section */}
-      <section id="home" ref={heroRef} className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-portfolio-primary/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/3 right-1/4 w-48 h-48 bg-portfolio-secondary/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 right-1/3 w-32 h-32 bg-portfolio-accent/10 rounded-full blur-2xl animate-pulse delay-2000"></div>
-        </div>
-        
-        <div className="absolute inset-0 z-0">
-          <Scene3D />
-        </div>
-        
+      <section id="home" ref={heroRef} className="min-h-screen flex items-center justify-center relative overflow-hidden pt-28 pb-16">
         <div className="container mx-auto px-6 z-10 relative">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            {/* Profile Picture */}
+            {/* Profile — Neumorphic frame */}
             <motion.div
-              initial={{ scale: 0.5, opacity: 0, rotateY: 180 }}
-              animate={heroInView ? { scale: 1, opacity: 1, rotateY: 0 } : {}}
-              transition={{ duration: 1.2, delay: 0.1 }}
-              className="flex justify-center mb-8"
+              initial={{ scale: 0.7, opacity: 0 }}
+              animate={heroInView ? { scale: 1, opacity: 1 } : {}}
+              transition={{ duration: 1, delay: 0.1 }}
+              className="flex justify-center mb-10"
             >
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-portfolio-primary via-portfolio-secondary to-portfolio-accent rounded-full p-1 animate-spin-slow">
-                  <div className="bg-background rounded-full p-2">
-                    <Avatar className="w-32 h-32 border-4 border-card shadow-2xl">
-                      <AvatarImage 
-                        src={profilePhoto} 
-                        alt="Reinaldo Barreto" 
-                      />
-                      <AvatarFallback className="text-2xl font-bold bg-gradient-to-r from-portfolio-primary to-portfolio-secondary text-white">RB</AvatarFallback>
-                    </Avatar>
-                  </div>
-                </div>
-                <div className="absolute -top-2 -right-2 bg-portfolio-green text-background rounded-full p-2 animate-bounce">
-                  <Star className="w-4 h-4" />
+              <div className="w-44 h-44 rounded-full neuo-flat-lg p-3 flex items-center justify-center">
+                <div className="w-full h-full rounded-full neuo-inset p-2">
+                  <Avatar className="w-full h-full">
+                    <AvatarImage src={profilePhoto} alt="Reinaldo Barreto" className="object-cover" />
+                    <AvatarFallback className="text-3xl font-black bg-transparent text-portfolio-primary">RB</AvatarFallback>
+                  </Avatar>
                 </div>
               </div>
             </motion.div>
 
-            <motion.h1 
-              className="text-6xl md:text-8xl font-bold mb-6 portfolio-text-gradient neon-glow"
-              initial={{ scale: 0.5, rotateX: 90 }}
-              animate={heroInView ? { scale: 1, rotateX: 0 } : {}}
-              transition={{ duration: 1.5, delay: 0.3 }}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={heroInView ? { opacity: 1 } : {}}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="text-xs uppercase tracking-[0.5em] text-portfolio-secondary mb-4"
+            >
+              RBtech · Portfolio
+            </motion.p>
+
+            <motion.h1
+              className="text-5xl md:text-7xl font-black mb-5 portfolio-text-gradient neon-glow tracking-tight"
+              initial={{ y: 20, opacity: 0 }}
+              animate={heroInView ? { y: 0, opacity: 1 } : {}}
+              transition={{ duration: 0.9, delay: 0.35 }}
             >
               Reinaldo Barreto
             </motion.h1>
-            
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl neuo-inset-sm mb-6"
+            >
+              <Smartphone className="w-5 h-5 text-portfolio-secondary" />
+              <span className="text-base md:text-lg text-foreground font-mono font-semibold">
+                Flutter Mobile Developer
+              </span>
+              <Rocket className="w-5 h-5 text-portfolio-primary" />
+            </motion.div>
+
+            <motion.p
+              className="text-base md:text-lg text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed"
+              initial={{ opacity: 0 }}
+              animate={heroInView ? { opacity: 1 } : {}}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              Especialista em <span className="text-portfolio-primary font-semibold">Flutter/Dart</span> para
+              <span className="text-portfolio-secondary font-semibold"> Android & iOS</span> com sólida experiência
+              em <span className="text-portfolio-accent font-semibold">Full Stack Development</span>.
+            </motion.p>
+
+            {/* Action Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="flex items-center justify-center mb-4"
+              transition={{ duration: 0.6, delay: 0.75 }}
+              className="flex flex-col sm:flex-row gap-5 justify-center mb-10"
             >
-              <Smartphone className="w-6 h-6 text-portfolio-secondary mr-2" />
-              <span className="text-xl md:text-2xl text-foreground font-mono">
-                Flutter Mobile Developer
-              </span>
-              <Rocket className="w-6 h-6 text-portfolio-primary ml-2 animate-bounce" />
-            </motion.div>
-            
-            <motion.p 
-              className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed"
-              initial={{ opacity: 0 }}
-              animate={heroInView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.8, delay: 0.7 }}
-            >
-              Especialista em <span className="text-portfolio-primary font-semibold">Flutter/Dart</span> para 
-              <span className="text-portfolio-secondary font-semibold"> Android & iOS</span> com experiência em 
-              <span className="text-portfolio-accent font-semibold"> Full Stack Development</span>
-            </motion.p>
-            
-            {/* Action Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.9 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
-            >
-              <button 
+              <button
                 onClick={downloadCV}
-                className="px-8 py-4 bg-gradient-to-r from-portfolio-primary to-portfolio-secondary text-white font-semibold rounded-full hover:scale-105 transition-all duration-300 flex items-center justify-center group shadow-lg"
+                className="px-8 py-4 rounded-2xl neuo-pressable text-portfolio-primary font-bold inline-flex items-center justify-center gap-3 group"
               >
-                <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
+                <Download className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
                 Download CV
               </button>
-              <button 
+              <button
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-4 border-2 border-portfolio-primary text-portfolio-primary font-semibold rounded-full hover:bg-portfolio-primary hover:text-white transition-all duration-300 flex items-center justify-center group"
+                className="px-8 py-4 rounded-2xl neuo-pressable text-portfolio-secondary font-bold inline-flex items-center justify-center gap-3 group"
               >
-                <Briefcase className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
+                <Briefcase className="w-5 h-5 group-hover:rotate-6 transition-transform" />
                 Ver Projetos
               </button>
             </motion.div>
-            
+
             {/* Social Links */}
-            <motion.div 
-              className="flex justify-center space-x-6 mb-12"
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={heroInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.8, delay: 1.1 }}
+            <motion.div
+              className="flex justify-center gap-4 mb-10"
+              initial={{ opacity: 0 }}
+              animate={heroInView ? { opacity: 1 } : {}}
+              transition={{ duration: 0.6, delay: 0.9 }}
             >
-              <motion.a 
-                href="https://github.com/reinaldobarreto" 
-                className="p-4 bg-card/50 backdrop-blur-sm rounded-full text-foreground hover:text-portfolio-primary transition-all duration-300 hover:scale-110 border border-border/50"
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Github size={28} />
-              </motion.a>
-              <motion.a 
-                href="https://www.linkedin.com/in/reinaldo-barreto-840896253" 
-                className="p-4 bg-card/50 backdrop-blur-sm rounded-full text-foreground hover:text-portfolio-secondary transition-all duration-300 hover:scale-110 border border-border/50"
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Linkedin size={28} />
-              </motion.a>
-              <motion.a 
-                href="mailto:reinaldo3178@gmail.com" 
-                className="p-4 bg-card/50 backdrop-blur-sm rounded-full text-foreground hover:text-portfolio-accent transition-all duration-300 hover:scale-110 border border-border/50"
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Mail size={28} />
-              </motion.a>
+              {[
+                { Icon: Github, href: 'https://github.com/reinaldobarreto', color: 'text-foreground' },
+                { Icon: Linkedin, href: 'https://www.linkedin.com/in/reinaldo-barreto-840896253', color: 'text-portfolio-secondary' },
+                { Icon: Mail, href: 'mailto:reinaldo3178@gmail.com', color: 'text-portfolio-primary' },
+              ].map(({ Icon, href, color }, i) => (
+                <motion.a
+                  key={i}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileTap={{ scale: 0.92 }}
+                  className={`p-4 rounded-2xl neuo-pressable ${color}`}
+                >
+                  <Icon size={22} />
+                </motion.a>
+              ))}
             </motion.div>
-            
-            {/* Contact Info */}
-            <motion.div 
-              className="glass-effect rounded-2xl p-6 max-w-md mx-auto border border-border/20"
-              initial={{ opacity: 0, scale: 0.8 }}
+
+            {/* Contact Info pill */}
+            <motion.div
+              className="inline-flex items-center gap-6 px-6 py-4 rounded-2xl neuo-inset-sm text-sm text-muted-foreground"
+              initial={{ opacity: 0, scale: 0.9 }}
               animate={heroInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.8, delay: 1.3 }}
+              transition={{ duration: 0.6, delay: 1 }}
             >
-              <div className="flex items-center justify-center space-x-6 text-sm text-muted-foreground">
-                <div className="flex items-center group hover:text-portfolio-primary transition-colors">
-                  <MapPin size={16} className="mr-2 group-hover:animate-pulse" />
-                  Navegantes, SC
-                </div>
-                <div className="flex items-center group hover:text-portfolio-secondary transition-colors">
-                  <Phone size={16} className="mr-2 group-hover:animate-pulse" />
-                  +55 (47) 98830-2308
-                </div>
+              <div className="flex items-center gap-2">
+                <MapPin size={14} className="text-portfolio-primary" />
+                Navegantes, SC
+              </div>
+              <div className="w-px h-4 bg-border" />
+              <div className="flex items-center gap-2">
+                <Phone size={14} className="text-portfolio-secondary" />
+                +55 (47) 98830-2308
               </div>
             </motion.div>
-            
-            {/* Scroll Indicator */}
+
             <motion.div
               initial={{ opacity: 0 }}
               animate={heroInView ? { opacity: 1 } : {}}
-              transition={{ duration: 1, delay: 1.5 }}
-              className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+              transition={{ duration: 1, delay: 1.4 }}
+              className="mt-14 flex justify-center"
             >
               <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-                className="text-muted-foreground"
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 1.6, repeat: Infinity }}
+                className="w-12 h-12 rounded-full neuo-flat-sm flex items-center justify-center text-portfolio-primary"
               >
-                <ArrowDown size={24} />
+                <ArrowDown size={18} />
               </motion.div>
             </motion.div>
           </motion.div>

@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 
@@ -15,61 +14,68 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
+  const hasLink = project.link && project.link !== '#';
   return (
     <motion.div
-      whileHover={{ y: -10 }}
-      className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300"
+      whileHover={{ y: -6 }}
+      className="neuo-flat rounded-3xl p-4 h-full flex flex-col"
     >
-      <div className="relative overflow-hidden">
+      <div className="relative rounded-2xl overflow-hidden neuo-inset-sm p-2">
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+          className="w-full h-44 object-cover rounded-xl transition-transform duration-500 hover:scale-105"
         />
-        <div className="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <div className="flex space-x-4">
-            <motion.a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
-            >
-              <ExternalLink size={20} />
-            </motion.a>
-            <motion.a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
-            >
-              <Github size={20} />
-            </motion.a>
-          </div>
-        </div>
       </div>
-      
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-800 mb-3">
+
+      <div className="p-3 pt-5 flex-1 flex flex-col">
+        <h3 className="text-lg font-bold text-foreground mb-2 tracking-tight">
           {project.title}
         </h3>
-        
-        <p className="text-gray-600 mb-4 leading-relaxed">
+        <p className="text-sm text-muted-foreground mb-4 leading-relaxed line-clamp-3 flex-1">
           {project.description}
         </p>
-        
-        <div className="flex flex-wrap gap-2">
-          {project.technologies.map((tech) => (
+
+        <div className="flex flex-wrap gap-1.5 mb-4">
+          {project.technologies.slice(0, 5).map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 bg-portfolio-primary/10 text-portfolio-primary rounded-full text-sm font-medium"
+              className="px-2.5 py-1 rounded-full text-[10px] font-semibold text-portfolio-secondary neuo-inset-sm"
             >
               {tech}
             </span>
           ))}
+          {project.technologies.length > 5 && (
+            <span className="px-2.5 py-1 rounded-full text-[10px] font-semibold text-muted-foreground neuo-inset-sm">
+              +{project.technologies.length - 5}
+            </span>
+          )}
+        </div>
+
+        <div className="flex gap-3 mt-auto">
+          <a
+            href={hasLink ? project.link : undefined}
+            target={hasLink ? '_blank' : undefined}
+            rel="noopener noreferrer"
+            aria-disabled={!hasLink}
+            className={`flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold ${
+              hasLink
+                ? 'neuo-pressable text-portfolio-primary'
+                : 'neuo-inset-sm text-muted-foreground cursor-not-allowed'
+            }`}
+          >
+            <ExternalLink size={14} />
+            {hasLink ? 'Ver Preview' : 'Em breve'}
+          </a>
+          <a
+            href="https://github.com/reinaldobarreto"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2.5 rounded-xl neuo-pressable text-foreground"
+            aria-label="GitHub"
+          >
+            <Github size={16} />
+          </a>
         </div>
       </div>
     </motion.div>
