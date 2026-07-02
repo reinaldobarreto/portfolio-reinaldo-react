@@ -349,7 +349,7 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" ref={skillsRef} className="py-20 bg-gradient-to-br from-card/50 to-muted/30">
+      <section id="skills" ref={skillsRef} className="py-24">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -407,7 +407,7 @@ const Index = () => {
               { icon: CloudLightning, label: 'Cloud Services', count: '6+' },
               { icon: Coffee, label: 'Cups of Coffee', count: '∞', animate: true }
             ].map((stat, index) => (
-              <div key={stat.label} className="text-center p-6 bg-card/30 rounded-xl backdrop-blur-sm border border-border/20">
+              <div key={stat.label} className="text-center p-6 rounded-2xl neuo-flat">
                 <stat.icon className={`w-8 h-8 mx-auto mb-2 text-portfolio-primary ${stat.animate ? 'animate-pulse' : ''}`} />
                 <div className="text-2xl font-bold text-foreground">{stat.count}</div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
@@ -418,7 +418,7 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" ref={experienceRef} className="py-20 bg-gradient-to-br from-background to-muted/20">
+      <section id="experience" ref={experienceRef} className="py-24">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -444,7 +444,7 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gradient-to-br from-card/30 to-muted/20">
+      <section id="projects" className="py-24">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -478,7 +478,7 @@ const Index = () => {
                 className="relative"
               >
                 {project.featured && (
-                  <div className="absolute -top-2 -right-2 bg-portfolio-green text-background rounded-full p-2 z-10 animate-bounce">
+                  <div className="absolute -top-3 -right-3 w-10 h-10 rounded-full neuo-flat-sm flex items-center justify-center text-portfolio-primary z-10">
                     <Star className="w-4 h-4" />
                   </div>
                 )}
