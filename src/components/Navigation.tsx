@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
@@ -9,11 +8,7 @@ const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      setScrolled(isScrolled);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -27,10 +22,7 @@ const Navigation = () => {
   ];
 
   const handleNavClick = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
     setIsOpen(false);
   };
 
@@ -38,31 +30,26 @@ const Navigation = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass-effect py-4' : 'bg-transparent py-6'
+      className={`fixed top-4 left-4 right-4 z-50 rounded-3xl transition-all duration-300 ${
+        scrolled ? 'neuo-flat py-3' : 'py-4'
       }`}
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-2xl font-bold portfolio-text-gradient"
-          >
-            RB
-          </motion.div>
+          <div className="w-11 h-11 rounded-2xl neuo-flat-sm flex items-center justify-center">
+            <span className="text-lg font-black portfolio-text-gradient">RB</span>
+          </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-3">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
                 onClick={() => handleNavClick(item.href)}
-                initial={{ opacity: 0, y: -20 }}
+                initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 * index }}
-                className="text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium drop-shadow-sm"
+                transition={{ delay: 0.05 * index }}
+                className="px-4 py-2 rounded-xl text-sm font-semibold text-foreground neuo-pressable hover:text-portfolio-primary"
               >
                 {item.name}
               </motion.button>
@@ -70,32 +57,30 @@ const Navigation = () => {
             <ThemeToggle />
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-2">
+          {/* Mobile */}
+          <div className="md:hidden flex items-center gap-2">
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors drop-shadow-sm"
+              className="p-2 rounded-xl neuo-pressable text-foreground"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden mt-4 pb-4"
+            className="md:hidden mt-4"
           >
-            <div className="flex flex-col space-y-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-lg p-4">
+            <div className="flex flex-col gap-2 neuo-inset rounded-2xl p-3">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className="text-left text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
+                  className="text-left px-4 py-2 rounded-xl text-sm font-semibold text-foreground neuo-pressable hover:text-portfolio-primary"
                 >
                   {item.name}
                 </button>
