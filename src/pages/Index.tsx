@@ -169,11 +169,12 @@ const Index = () => {
       featured: true
     },
     {
-      title: 'Show do Saber (Quiz Bíblico)',
+      title: 'Show do Saber',
       description: 'Aplicação interativa em JavaScript com foco em experiência mobile-first, gamificação e interface simples.',
       technologies: ['JavaScript', 'HTML5', 'CSS3', 'Responsive UI'],
       image: quizBiblicoImage,
       link: 'https://ais-pre-4h6kbb4exa66hc6vpngoaf-502257953705.us-east1.run.app/',
+      githubLink: 'https://github.com/reinaldobarreto/quiz-biblico',
       featured: false
     },
     {
