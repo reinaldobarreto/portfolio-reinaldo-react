@@ -68,52 +68,52 @@ const Index = () => {
 
   const skills = [
     {
-      category: 'Flutter Mobile Development',
+      category: 'React Native & Mobile',
       icon: <Smartphone className="w-8 h-8" />,
-      technologies: ['Flutter', 'Dart', 'Android (Kotlin/Java)', 'iOS (Swift)', 'Firebase', 'State Management', 'Responsive UI', 'Animations'],
-      description: 'Especialista em Flutter e Dart para desenvolvimento de apps mobile multiplataforma nativos para Android e iOS, com conhecimento básico em Kotlin, Java e Swift'
+      technologies: ['React Native', 'Expo', 'TypeScript', 'Offline-first', 'MapLibre', 'Push Notifications', 'Android', 'iOS'],
+      description: 'Stack principal para apps mobile multiplataforma, com foco em performance, UX premium, mapas, pagamentos e publicação Android/iOS'
     },
     {
-      category: 'Frontend Development',
-      icon: <Code className="w-8 h-8" />,
-      technologies: ['Angular', 'React.js', 'Vue.js', 'Next.js', 'TypeScript', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Sass'],
-      description: 'Criação de interfaces modernas e responsivas com foco em UX/UI utilizando as mais recentes tecnologias frontend'
+      category: 'JavaScript Core',
+      icon: <Terminal className="w-8 h-8" />,
+      technologies: ['JavaScript (ES6+)', 'TypeScript', 'Clean Architecture', 'Zustand', 'TanStack Query', 'Testing', 'Docs as Code'],
+      description: 'Base da minha atuação full-cycle: código modular, legível, testável e preparado para escalar em produto real'
     },
     {
-      category: 'Backend Development',
+      category: 'Backend Node.js / NestJS',
       icon: <Server className="w-8 h-8" />,
-      technologies: ['Node.js', 'Spring Boot', 'Java EE', 'PHP', 'Python', 'Express.js', 'NestJS'],
-      description: 'Desenvolvimento de APIs RESTful robustas e arquiteturas escaláveis para sistemas empresariais de alta performance'
+      technologies: ['Node.js', 'NestJS', 'REST', 'Webhooks', 'JWT', 'Supabase Edge Functions', 'PostgreSQL', 'RLS'],
+      description: 'APIs seguras, regras de negócio no servidor, integrações, pagamentos, tempo real e arquitetura desacoplada'
     },
     {
-      category: 'Database Management',
+      category: 'Frontend Web',
+      icon: <Code className="w-8 h-8" />,
+      technologies: ['Next.js', 'React.js', 'Vite', 'Tailwind CSS', 'Responsive UI', 'Accessibility', 'SEO'],
+      description: 'Interfaces modernas e responsivas com React, Next.js e Vite, priorizando experiência, performance e manutenção'
+    },
+    {
+      category: 'Database & Cloud',
       icon: <Database className="w-8 h-8" />,
-      technologies: ['PostgreSQL', 'MySQL', 'Oracle', 'MongoDB', 'Redis', 'Elasticsearch', 'SQLite'],
-      description: 'Modelagem, otimização e administração de bancos de dados relacionais e NoSQL para máxima eficiência'
+      technologies: ['PostgreSQL', 'Supabase', 'SQLite', 'Redis', 'Storage', 'Realtime', 'Migrations'],
+      description: 'Modelagem relacional, RLS, cache, sincronização offline e backends cloud prontos para produção'
     },
     {
-      category: 'DevOps & Cloud',
+      category: 'DevOps & Delivery',
       icon: <CloudLightning className="w-8 h-8" />,
-      technologies: ['Docker', 'Kubernetes', 'AWS', 'CI/CD', 'Jenkins', 'Terraform', 'Nginx', 'Google Cloud'],
-      description: 'Automação completa de deploy, infraestrutura como código e orquestração de containers'
+      technologies: ['Docker', 'GitHub Actions', 'CI/CD', 'Expo EAS', 'Vercel', 'Observability'],
+      description: 'Deploy automatizado, pipelines, builds mobile e entrega contínua com qualidade'
     },
     {
-      category: 'Mobile Technologies',
-      icon: <Globe className="w-8 h-8" />,
-      technologies: ['React Native', 'Progressive Web Apps', 'Ionic', 'Native Android', 'Native iOS', 'Cross-platform'],
-      description: 'Experiência em múltiplas tecnologias mobile e desenvolvimento de aplicações híbridas e nativas'
-    },
-    {
-      category: 'Security & Authentication',
+      category: 'Security & Auth',
       icon: <Shield className="w-8 h-8" />,
-      technologies: ['OAuth2', 'JWT', 'Spring Security', 'HTTPS', 'Encryption', 'Firewall', 'Biometrics'],
-      description: 'Implementação de segurança multicamadas e autenticação robusta para proteção total de dados'
+      technologies: ['OAuth2', 'JWT', 'RLS', 'Anti-fraud', 'LGPD', 'Encryption', 'Audit Logs'],
+      description: 'Autenticação robusta, proteção de dados sensíveis e regras de segurança aplicadas no backend'
     },
     {
-      category: 'Performance & Optimization',
+      category: 'Performance & UX',
       icon: <Zap className="w-8 h-8" />,
-      technologies: ['Performance Monitoring', 'Code Optimization', 'Caching', 'CDN', 'Load Balancing'],
-      description: 'Otimização avançada de performance e escalabilidade para aplicações mobile e web de alto tráfego'
+      technologies: ['Lazy Loading', 'Virtualization', 'Caching', 'Animations', 'Haptics', 'Dark Mode'],
+      description: 'Otimização de listas, mapas, carregamento incremental e microinterações para apps comerciais'
     }
   ];
 
@@ -143,51 +143,51 @@ const Index = () => {
 
   const projects = [
     {
-      title: 'FinTrack360 - Controle Financeiro',
-      description: 'Aplicativo Flutter para controle financeiro pessoal/familiar. Foco em mobile-first (Android/iOS) com teste rápido via web. Sistema completo de gestão de economia doméstica.',
-      technologies: ['Flutter', 'Dart', 'Mobile-First', 'Android', 'iOS', 'Web', 'Financial Management', 'Responsive Design'],
+      title: 'PopFaxina — Marketplace Mobile',
+      description: 'Marketplace mobile com React Native, Expo, TypeScript e Supabase. Mapa, descoberta de prestadores, pagamentos, chat, OTP, antifraude, painel admin e sincronização offline.',
+      technologies: ['React Native', 'Expo', 'TypeScript', 'Supabase', 'MapLibre', 'Nest-like Backend', 'RLS'],
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop',
+      link: 'https://github.com/reinaldobarreto/popfaxina',
+      featured: true
+    },
+    {
+      title: 'Portfolio React — Este Site',
+      description: 'Portfólio pessoal com Vite, React, TypeScript e Tailwind. Identidade JavaScript-first, animações, dark mode e deploy via GitHub Pages.',
+      technologies: ['Vite', 'React.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'GitHub Pages'],
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop',
+      link: 'https://github.com/reinaldobarreto/portfolio-reinaldo-react',
+      featured: true
+    },
+    {
+      title: 'PDF Turbo',
+      description: 'Ferramenta JavaScript para manipulação e automação de PDFs, com foco em produtividade e fluxos reutilizáveis.',
+      technologies: ['JavaScript', 'Node.js', 'PDF', 'Automation', 'CLI'],
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=300&fit=crop',
+      link: 'https://github.com/reinaldobarreto/pdfturbo',
+      featured: true
+    },
+    {
+      title: 'Quiz Bíblico',
+      description: 'Aplicação interativa em JavaScript com foco em experiência mobile-first, gamificação e interface simples.',
+      technologies: ['JavaScript', 'HTML5', 'CSS3', 'Responsive UI'],
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&h=300&fit=crop',
+      link: 'https://github.com/reinaldobarreto/quiz-biblico',
+      featured: false
+    },
+    {
+      title: 'FinTrack360 — Controle Financeiro',
+      description: 'Projeto de controle financeiro pessoal com foco mobile-first. Evolução do produto para stack JavaScript/React Native.',
+      technologies: ['JavaScript', 'Mobile-first', 'Finance', 'Dashboard', 'PWA'],
       image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=500&h=300&fit=crop',
       link: 'https://reinaldobarreto.github.io/fintrack360/',
-      featured: true
-    },
-    {
-      title: 'Sistema de Gestão Pública Integrada',
-      description: 'Plataforma completa para gestão de recursos humanos, tributário e contábil para prefeituras com módulos integrados e dashboard analítico. (Em desenvolvimento)',
-      technologies: ['Vue.js', 'Spring Boot', 'PostgreSQL', 'Docker', 'JWT', 'Redis'],
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop',
-      link: '#',
-      featured: true
-    },
-    {
-      title: 'E-Commerce Mobile Flutter',
-      description: 'App de e-commerce nativo Flutter para Android e iOS com pagamentos integrados, carrinho de compras e sistema de notificações. (Em desenvolvimento)',
-      technologies: ['Flutter', 'Dart', 'Kotlin', 'Swift', 'Firebase', 'Stripe', 'REST API'],
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop',
-      link: '#',
-      featured: true
-    },
-    {
-      title: 'Portal Administrativo Responsivo',
-      description: 'Interface moderna e intuitiva para gestão de sistemas administrativos municipais com dashboard em tempo real. (Em desenvolvimento)',
-      technologies: ['Angular', 'TypeScript', 'Material UI', 'Spring Boot', 'WebSocket', 'PWA'],
-      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&h=300&fit=crop',
-      link: '#',
       featured: false
     },
     {
-      title: 'App de Fitness Mobile',
-      description: 'Aplicativo Flutter de fitness com rastreamento de treinos, gráficos de progresso e integração com wearables. (Em desenvolvimento)',
-      technologies: ['Flutter', 'Dart', 'SQLite', 'Charts', 'Sensors', 'Health Kit', 'Google Fit'],
-      image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&h=300&fit=crop',
-      link: '#',
-      featured: false
-    },
-    {
-      title: 'API de Segurança Pública',
-      description: 'Sistema robusto de APIs para integração de dados de segurança pública com análise de dados em tempo real. (Em desenvolvimento)',
-      technologies: ['Node.js', 'Express', 'JWT', 'PostgreSQL', 'Docker', 'WebSocket'],
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=300&fit=crop',
-      link: '#',
+      title: 'APIs Node/NestJS',
+      description: 'Backends modulares com Node.js e NestJS para autenticação, integrações, webhooks, pagamentos e regras de negócio seguras.',
+      technologies: ['Node.js', 'NestJS', 'PostgreSQL', 'JWT', 'Docker', 'REST'],
+      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=300&fit=crop',
+      link: 'https://github.com/reinaldobarreto',
       featured: false
     }
   ];
@@ -248,7 +248,7 @@ const Index = () => {
             >
               <Smartphone className="w-5 h-5 text-portfolio-secondary" />
               <span className="text-base md:text-lg text-foreground font-mono font-semibold">
-                Flutter Mobile Developer
+                React Native Developer · JavaScript
               </span>
               <Rocket className="w-5 h-5 text-portfolio-primary" />
             </motion.div>
@@ -259,9 +259,10 @@ const Index = () => {
               animate={heroInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              Especialista em <span className="text-portfolio-primary font-semibold">Flutter/Dart</span> para
-              <span className="text-portfolio-secondary font-semibold"> Android & iOS</span> com sólida experiência
-              em <span className="text-portfolio-accent font-semibold">Full Stack Development</span>.
+              Especialista em <span className="text-portfolio-primary font-semibold">React Native</span> e
+              <span className="text-portfolio-secondary font-semibold"> JavaScript</span>, com backend em
+              <span className="text-portfolio-accent font-semibold"> Node.js/NestJS</span> e frontend em
+              <span className="text-foreground font-semibold"> Next.js/Vite</span>.
             </motion.p>
 
             {/* Action Buttons */}
@@ -296,7 +297,7 @@ const Index = () => {
             >
               {[
                 { Icon: Github, href: 'https://github.com/reinaldobarreto', color: 'text-foreground' },
-                { Icon: Linkedin, href: 'https://www.linkedin.com/in/reinaldo-barreto-840896253', color: 'text-portfolio-secondary' },
+                { Icon: Linkedin, href: 'https://www.linkedin.com/in/reinaldo-barreto/', color: 'text-portfolio-secondary' },
                 { Icon: Mail, href: 'mailto:reinaldo3178@gmail.com', color: 'text-portfolio-primary' },
               ].map(({ Icon, href, color }, i) => (
                 <motion.a
@@ -365,7 +366,7 @@ const Index = () => {
               <Zap className="w-8 h-8 text-portfolio-accent ml-3 animate-pulse" />
             </div>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Experiência sólida em desenvolvimento full stack com foco em tecnologias modernas e 
+              Experiência sólida em JavaScript full-cycle com foco em mobile, backend e frontend modernos e 
               <span className="text-portfolio-primary font-semibold"> inovação contínua</span>
             </p>
             <div className="flex items-center justify-center mt-4 space-x-4 text-sm text-muted-foreground">
@@ -402,9 +403,9 @@ const Index = () => {
             className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
           >
             {[
-              { icon: Code, label: 'Linguagens', count: '12+' },
-              { icon: Database, label: 'Databases', count: '8+' },
-              { icon: CloudLightning, label: 'Cloud Services', count: '6+' },
+              { icon: Code, label: 'JavaScript Stack', count: 'JS First' },
+              { icon: Database, label: 'Backend/APIs', count: 'Node/Nest' },
+              { icon: CloudLightning, label: 'Web/Mobile', count: 'RN/Next' },
               { icon: Coffee, label: 'Cups of Coffee', count: '∞', animate: true }
             ].map((stat, index) => (
               <div key={stat.label} className="text-center p-6 rounded-2xl neuo-flat">
@@ -434,7 +435,7 @@ const Index = () => {
               <Heart className="w-8 h-8 text-portfolio-red ml-3 animate-pulse" />
             </div>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Trajetória no desenvolvimento de sistemas para o setor público e 
+              Trajetória construindo produtos JavaScript para mobile, web e backend, incluindo setor público e 
               <span className="text-portfolio-secondary font-semibold"> soluções corporativas inovadoras</span>
             </p>
           </motion.div>
@@ -461,7 +462,7 @@ const Index = () => {
               <Star className="w-8 h-8 text-portfolio-accent ml-3 animate-pulse" />
             </div>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Soluções desenvolvidas para órgãos públicos, empresas e 
+              Projetos em JavaScript, React Native, Node.js e Next.js para produtos reais, open source e 
               <span className="text-portfolio-orange font-semibold"> projetos pessoais inovadores</span>
             </p>
           </motion.div>

@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
 const contacts = [
   { icon: Mail, label: 'Email', value: 'reinaldo3178@gmail.com', href: 'mailto:reinaldo3178@gmail.com', color: 'text-portfolio-primary' },
   { icon: Phone, label: 'WhatsApp', value: '+55 (47) 98830-2308', href: 'tel:+5547988302308', color: 'text-portfolio-green' },
-  { icon: Linkedin, label: 'LinkedIn', value: 'Conecte-se comigo', href: 'https://www.linkedin.com/in/reinaldo-barreto-840896253', color: 'text-portfolio-secondary' },
+  { icon: Linkedin, label: 'LinkedIn', value: 'Conecte-se comigo', href: 'https://www.linkedin.com/in/reinaldo-barreto/', color: 'text-portfolio-secondary' },
   { icon: Github, label: 'GitHub', value: 'Veja meus projetos', href: 'https://github.com/reinaldobarreto', color: 'text-foreground' },
 ];
 
@@ -24,7 +24,7 @@ const ContactSection = () => {
             Vamos Trabalhar Juntos
           </h2>
           <p className="text-base text-muted-foreground max-w-xl mx-auto">
-            Entre em contato para discutir seus projetos mobile e como posso ajudar
+            Entre em contato para discutir apps React Native, backends Node/NestJS ou frontends Next.js/Vite
           </p>
         </motion.div>
 
@@ -63,7 +63,7 @@ const ContactSection = () => {
             Navegantes, SC — Brasil
           </div>
           <p className="text-xs text-muted-foreground">
-            © 2024 Reinaldo Barreto · RBtech · Todos os direitos reservados.
+            © 2026 Reinaldo Barreto · RBtech · Todos os direitos reservados.
           </p>
         </motion.div>
       </div>

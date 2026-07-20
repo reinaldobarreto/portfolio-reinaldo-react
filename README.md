@@ -1,9 +1,9 @@
 
-# Portfólio Reinaldo Barreto da Silva - Desenvolvedor Full Stack
+# Portfólio Reinaldo Barreto da Silva - JavaScript Full-Cycle Developer
 
 🌐 **Acesse o portfólio**: [https://reinaldobarreto.github.io/portfolio-reinaldo-react/](https://reinaldobarreto.github.io/portfolio-reinaldo-react/)
 
-Um portfólio moderno e interativo desenvolvido com React, TypeScript, Three.js e Framer Motion, apresentando efeitos 3D, animações suaves e design responsivo.
+Portfólio moderno com React, TypeScript, Vite e Framer Motion. Identidade **JavaScript-first** com foco em **React Native/Expo** (mobile), **Node.js/NestJS** (backend) e **Next.js/Vite** (frontend web).
 
 ## 🚀 Passo a Passo para Criar o Projeto
 
@@ -147,7 +147,7 @@ Modifique `src/components/Scene3D.tsx` para:
 **Reinaldo Barreto da Silva**
 - 📧 Email: reinaldo3178@gmail.com
 - 📱 WhatsApp: +55 (47) 98830-2308
-- 💼 LinkedIn: [linkedin.com/in/reinaldo-barreto-840896253](https://www.linkedin.com/in/reinaldo-barreto-840896253)
+- 💼 LinkedIn: [linkedin.com/in/reinaldo-barreto](https://www.linkedin.com/in/reinaldo-barreto/)
 - 🐙 GitHub: [github.com/reinaldobarreto](https://github.com/reinaldobarreto)
 - 📍 Localização: Navegantes, SC - Brasil
 
