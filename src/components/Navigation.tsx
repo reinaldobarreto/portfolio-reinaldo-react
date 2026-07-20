@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
+import corelabsLogo from '../assets/corelabs-logo.png';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,8 +37,8 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
-          <div className="w-11 h-11 rounded-2xl neuo-flat-sm flex items-center justify-center">
-            <span className="text-lg font-black portfolio-text-gradient">RB</span>
+          <div className="w-11 h-11 rounded-2xl neuo-flat-sm flex items-center justify-center overflow-hidden">
+            <img src={corelabsLogo} alt="CoreLabs Dev Nexus" className="w-9 h-9 object-contain" />
           </div>
 
           {/* Desktop Menu */}

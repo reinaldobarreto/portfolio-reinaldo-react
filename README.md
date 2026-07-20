@@ -145,11 +145,12 @@ Modifique `src/components/Scene3D.tsx` para:
 ## 📞 Contato
 
 **Reinaldo Barreto da Silva**
-- 📧 Email: reinaldo3178@gmail.com
+- 📧 Email: corelabs.dev.nexus@gmail.com
 - 📱 WhatsApp: +55 (47) 98830-2308
 - 💼 LinkedIn: [linkedin.com/in/reinaldo-barreto](https://www.linkedin.com/in/reinaldo-barreto/)
 - 🐙 GitHub: [github.com/reinaldobarreto](https://github.com/reinaldobarreto)
 - 📍 Localização: Navegantes, SC - Brasil
+- 🏢 Empresa: CoreLabs Dev Nexus
 
 ## 📄 Licença
 

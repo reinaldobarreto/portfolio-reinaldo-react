@@ -8,7 +8,8 @@ import ContactSection from '../components/ContactSection';
 import Navigation from '../components/Navigation';
 import { Avatar, AvatarImage, AvatarFallback } from '../components/ui/avatar';
 import profilePhoto from '../assets/foto-perfil.png';
-import rbtechLogo from '../assets/rbtech-logo.png';
+import corelabsLogo from '../assets/corelabs-logo.png';
+import quizBiblicoImage from '../assets/quiz-biblico-real.png';
 import {
   Github, 
   Linkedin, 
@@ -168,11 +169,11 @@ const Index = () => {
       featured: true
     },
     {
-      title: 'Quiz Bíblico',
+      title: 'Show do Saber (Quiz Bíblico)',
       description: 'Aplicação interativa em JavaScript com foco em experiência mobile-first, gamificação e interface simples.',
       technologies: ['JavaScript', 'HTML5', 'CSS3', 'Responsive UI'],
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&h=300&fit=crop',
-      link: 'https://github.com/reinaldobarreto/quiz-biblico',
+      image: quizBiblicoImage,
+      link: 'https://ais-pre-4h6kbb4exa66hc6vpngoaf-502257953705.us-east1.run.app/',
       featured: false
     },
     {
@@ -223,14 +224,21 @@ const Index = () => {
               </div>
             </motion.div>
 
-            <motion.p
+            <motion.div
               initial={{ opacity: 0 }}
               animate={heroInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="text-xs uppercase tracking-[0.5em] text-portfolio-secondary mb-4"
+              className="inline-flex items-center justify-center gap-3 mb-4"
             >
-              RBtech · Portfolio
-            </motion.p>
+              <img
+                src={corelabsLogo}
+                alt="CoreLabs Dev Nexus"
+                className="w-8 h-8 rounded-xl object-contain"
+              />
+              <p className="text-xs uppercase tracking-[0.5em] text-portfolio-secondary">
+                CoreLabs · Dev Nexus
+              </p>
+            </motion.div>
 
             <motion.h1
               className="text-5xl md:text-7xl font-black mb-5 portfolio-text-gradient neon-glow tracking-tight"
@@ -299,7 +307,7 @@ const Index = () => {
               {[
                 { Icon: Github, href: 'https://github.com/reinaldobarreto', color: 'text-foreground' },
                 { Icon: Linkedin, href: 'https://www.linkedin.com/in/reinaldo-barreto/', color: 'text-portfolio-secondary' },
-                { Icon: Mail, href: 'mailto:reinaldo3178@gmail.com', color: 'text-portfolio-primary' },
+                { Icon: Mail, href: 'mailto:corelabs.dev.nexus@gmail.com', color: 'text-portfolio-primary' },
               ].map(({ Icon, href, color }, i) => (
                 <motion.a
                   key={i}

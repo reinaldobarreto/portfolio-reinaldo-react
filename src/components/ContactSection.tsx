@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
 
 const contacts = [
-  { icon: Mail, label: 'Email', value: 'reinaldo3178@gmail.com', href: 'mailto:reinaldo3178@gmail.com', color: 'text-portfolio-primary' },
+  { icon: Mail, label: 'Email', value: 'corelabs.dev.nexus@gmail.com', href: 'mailto:corelabs.dev.nexus@gmail.com', color: 'text-portfolio-primary' },
   { icon: Phone, label: 'WhatsApp', value: '+55 (47) 98830-2308', href: 'tel:+5547988302308', color: 'text-portfolio-green' },
   { icon: Linkedin, label: 'LinkedIn', value: 'Conecte-se comigo', href: 'https://www.linkedin.com/in/reinaldo-barreto/', color: 'text-portfolio-secondary' },
   { icon: Github, label: 'GitHub', value: 'Veja meus projetos', href: 'https://github.com/reinaldobarreto', color: 'text-foreground' },
@@ -63,7 +63,7 @@ const ContactSection = () => {
             Navegantes, SC — Brasil
           </div>
           <p className="text-xs text-muted-foreground">
-            © 2026 Reinaldo Barreto · RBtech · Todos os direitos reservados.
+            © 2026 Reinaldo Barreto · CoreLabs Dev Nexus · Todos os direitos reservados.
           </p>
         </motion.div>
       </div>
