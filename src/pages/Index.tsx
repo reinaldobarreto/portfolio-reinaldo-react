@@ -53,7 +53,7 @@ const Index = () => {
 
       const link = document.createElement('a');
       link.href = objectUrl;
-      link.download = 'Curriculo_Reinaldo_Barreto_Flutter_Developer.pdf';
+      link.download = 'Curriculo_Reinaldo_Barreto_Full_Stack.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
