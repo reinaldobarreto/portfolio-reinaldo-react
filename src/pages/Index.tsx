@@ -187,8 +187,8 @@ const Index = () => {
     },
     {
       title: 'APIs Node/NestJS',
-      description: 'Demo de backend NestJS com health check, login JWT e listagem de recursos protegidos. 1 API + 1 tela pública no GitHub Pages.',
-      technologies: ['Node.js', 'NestJS', 'JWT', 'REST', 'Docker'],
+      description: 'CRUD REST completo (GET/POST/PUT/PATCH/DELETE) com JWT, Swagger e Redoc. Demo pública no GitHub Pages.',
+      technologies: ['Node.js', 'NestJS', 'JWT', 'Swagger', 'Redoc', 'REST'],
       image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=300&fit=crop',
       link: 'https://reinaldobarreto.github.io/portfolio-reinaldo-react/demos/apis-nestjs/',
       githubLink: 'https://github.com/reinaldobarreto/apis-node-nestjs-demo',
