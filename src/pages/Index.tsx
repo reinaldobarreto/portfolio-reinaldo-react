@@ -143,11 +143,12 @@ const Index = () => {
 
   const projects = [
     {
-      title: 'PopFaxina — Marketplace Mobile',
-      description: 'Marketplace mobile com React Native, Expo, TypeScript e Supabase. Mapa, descoberta de prestadores, pagamentos, chat, OTP, antifraude, painel admin e sincronização offline.',
-      technologies: ['React Native', 'Expo', 'TypeScript', 'Supabase', 'MapLibre', 'Nest-like Backend', 'RLS'],
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop',
-      link: 'https://github.com/reinaldobarreto/popfaxina',
+      title: 'PopFaxina — Marketplace de Limpeza',
+      description: 'Produto mobile em sociedade para conectar clientes e prestadores de serviços de limpeza. Projeto privado — código-fonte e detalhes comerciais sob confidencialidade.',
+      technologies: ['React Native', 'Expo', 'TypeScript', 'Supabase', 'MapLibre', 'Mobile-first'],
+      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500&h=300&fit=crop',
+      link: '#',
+      isPrivate: true,
       featured: true
     },
     {

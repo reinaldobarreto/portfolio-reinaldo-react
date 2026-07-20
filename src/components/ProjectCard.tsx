@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Lock } from 'lucide-react';
 
 interface Project {
   title: string;
@@ -7,6 +7,8 @@ interface Project {
   technologies: string[];
   image: string;
   link: string;
+  isPrivate?: boolean;
+  githubLink?: string;
 }
 
 interface ProjectCardProps {
@@ -14,7 +16,9 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
-  const hasLink = project.link && project.link !== '#';
+  const isPrivate = project.isPrivate === true;
+  const hasLink = !isPrivate && project.link && project.link !== '#';
+  const githubHref = isPrivate ? undefined : (project.githubLink ?? 'https://github.com/reinaldobarreto');
   return (
     <motion.div
       whileHover={{ y: -6 }}
@@ -53,29 +57,46 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </div>
 
         <div className="flex gap-3 mt-auto">
-          <a
-            href={hasLink ? project.link : undefined}
-            target={hasLink ? '_blank' : undefined}
-            rel="noopener noreferrer"
-            aria-disabled={!hasLink}
-            className={`flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold ${
-              hasLink
-                ? 'neuo-pressable text-portfolio-primary'
-                : 'neuo-inset-sm text-muted-foreground cursor-not-allowed'
-            }`}
-          >
-            <ExternalLink size={14} />
-            {hasLink ? 'Ver Preview' : 'Em breve'}
-          </a>
-          <a
-            href="https://github.com/reinaldobarreto"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2.5 rounded-xl neuo-pressable text-foreground"
-            aria-label="GitHub"
-          >
-            <Github size={16} />
-          </a>
+          {isPrivate ? (
+            <div className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl neuo-inset-sm text-xs font-bold text-muted-foreground cursor-default">
+              <Lock size={14} />
+              Projeto Privado
+            </div>
+          ) : (
+            <a
+              href={hasLink ? project.link : undefined}
+              target={hasLink ? '_blank' : undefined}
+              rel="noopener noreferrer"
+              aria-disabled={!hasLink}
+              className={`flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold ${
+                hasLink
+                  ? 'neuo-pressable text-portfolio-primary'
+                  : 'neuo-inset-sm text-muted-foreground cursor-not-allowed'
+              }`}
+            >
+              <ExternalLink size={14} />
+              {hasLink ? 'Ver Preview' : 'Em breve'}
+            </a>
+          )}
+          {githubHref ? (
+            <a
+              href={githubHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-xl neuo-pressable text-foreground"
+              aria-label="GitHub"
+            >
+              <Github size={16} />
+            </a>
+          ) : (
+            <div
+              className="p-2.5 rounded-xl neuo-inset-sm text-muted-foreground cursor-default"
+              aria-label="Código privado"
+              title="Código-fonte privado"
+            >
+              <Lock size={16} />
+            </div>
+          )}
         </div>
       </div>
     </motion.div>
