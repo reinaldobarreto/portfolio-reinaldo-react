@@ -45,7 +45,7 @@ const Index = () => {
   // Função para download do currículo em PDF (robusta com Blob)
   const downloadCV = async () => {
     try {
-      const cvUrl = `${import.meta.env.BASE_URL}curriculo-reinaldo-barreto.pdf`;
+      const cvUrl = `${import.meta.env.BASE_URL}analista-de-sistemas-desenvolvedor-de-software-full-stack.pdf`;
       const res = await fetch(cvUrl);
       if (!res.ok) throw new Error(`Falha ao obter PDF: ${res.status}`);
       const blob = await res.blob();
@@ -53,7 +53,7 @@ const Index = () => {
 
       const link = document.createElement('a');
       link.href = objectUrl;
-      link.download = 'Curriculo_Reinaldo_Barreto_Full_Stack.pdf';
+      link.download = 'analista-de-sistemas-desenvolvedor-de-software-full-stack.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -61,7 +61,7 @@ const Index = () => {
     } catch (error) {
       console.error('Erro ao baixar o currículo:', error);
       // Fallback: abrir em nova aba se o navegador impedir o download direto
-      const fallbackUrl = `${import.meta.env.BASE_URL}curriculo-reinaldo-barreto.pdf`;
+      const fallbackUrl = `${import.meta.env.BASE_URL}analista-de-sistemas-desenvolvedor-de-software-full-stack.pdf`;
       window.open(fallbackUrl, '_blank');
     }
   };
